@@ -1,0 +1,775 @@
+/* ==========================================================================
+   Daily Palan Pass — Mobile First Responsive Styles
+   Optimized for above-the-fold visibility on small mobile screens
+   ========================================================================== */
+
+:root {
+  --bg-page: #f8f6f0;
+  --bg-surface: #ffffff;
+  --bg-subtle: #efe9df;
+  --bg-focus: #fffbf5;
+  --bg-caution: #fdf6f4;
+  --bg-habit: #f3f8f5;
+
+  --text-primary: #191612;
+  --text-secondary: #574f46;
+  --text-muted: #786f66;
+
+  --border-light: #e8e1d5;
+  --border-strong: #d4c8b6;
+
+  --accent-saffron: #b84e1b;
+  --accent-saffron-soft: #fbeee4;
+  --accent-caution: #a63624;
+  --accent-caution-soft: #fae8e5;
+  --accent-emerald: #156644;
+  --accent-emerald-soft: #e2f2eb;
+
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --tap-target: 44px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-sans);
+  background-color: var(--bg-page);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* ==========================================================================
+   Mobile App Shell Layout
+   ========================================================================== */
+
+.mobile-app-shell {
+  width: 100%;
+  max-width: 680px;
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 8px 10px 24px;
+  gap: 8px;
+}
+
+/* ==========================================================================
+   1. Ultra-Compact Topbar (~46px)
+   ========================================================================== */
+
+.app-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 6px 8px;
+  min-height: 46px;
+}
+
+.topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+  flex-shrink: 1;
+}
+
+.topbar-brand-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  background: var(--accent-saffron-soft);
+  color: var(--accent-saffron);
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.topbar-titles {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+  min-width: 0;
+}
+
+.topbar-title {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+}
+
+.topbar-sub {
+  font-size: 0.7rem;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex-shrink: 0;
+}
+
+/* Language Toggle (Tamil / English) */
+.lang-toggle-wrap {
+  display: inline-flex;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  padding: 2px;
+}
+
+.lang-btn {
+  background: transparent;
+  padding: 3px 7px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  border-radius: 999px;
+  color: var(--text-secondary);
+  transition: all 0.15s ease;
+}
+
+.lang-btn.is-active {
+  background: var(--accent-saffron);
+  color: #ffffff;
+}
+
+/* Location Pill Button */
+.loc-pill-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  padding: 4px 7px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  max-width: 95px;
+}
+
+.loc-pin {
+  font-size: 0.72rem;
+}
+
+.loc-name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Pass Status Badge */
+.status-badge {
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 4px 7px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.status-badge--preview {
+  background: var(--bg-subtle);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-strong);
+}
+
+.status-badge--unlocked {
+  background: var(--accent-emerald-soft);
+  color: var(--accent-emerald);
+  border: 1px solid #b3d9c7;
+}
+
+/* ==========================================================================
+   2. Compact Panchang Strip (~32px)
+   ========================================================================== */
+
+.panchang-strip {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.panchang-strip::-webkit-scrollbar {
+  display: none;
+}
+
+.panchang-strip__track {
+  display: flex;
+  gap: 6px;
+  padding: 1px 0;
+}
+
+.panchang-chip {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 5px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  border-radius: 999px;
+  padding: 4px 10px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.panchang-chip--rahu {
+  background: var(--accent-caution-soft);
+  border-color: #f6cfc7;
+}
+
+.chip-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.panchang-chip--rahu .chip-label {
+  color: var(--accent-caution);
+}
+
+.chip-val {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.panchang-chip--rahu .chip-val {
+  color: var(--accent-caution);
+}
+
+/* ==========================================================================
+   3. Horizontal 12-Rasi Carousel (~42px height)
+   ========================================================================== */
+
+.rasi-carousel-nav {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  margin-top: 1px;
+}
+
+.rasi-carousel-nav::-webkit-scrollbar {
+  display: none;
+}
+
+.rasi-carousel-track {
+  display: flex;
+  gap: 6px;
+  padding: 2px 0;
+}
+
+.rasi-chip-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 40px;
+  padding: 4px 12px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: all 0.15s ease;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.rasi-chip-btn:hover {
+  background: var(--bg-subtle);
+  border-color: var(--border-strong);
+}
+
+.rasi-chip-btn[aria-selected="true"],
+.rasi-chip-btn.is-selected {
+  background: var(--accent-saffron-soft) !important;
+  border-color: var(--accent-saffron) !important;
+  box-shadow: 0 0 0 1px var(--accent-saffron) !important;
+}
+
+.chip-glyph {
+  font-size: 1.15rem;
+  line-height: 1;
+}
+
+.chip-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   4. The 60-Second Reading Card (Appears in first view!)
+   ========================================================================== */
+
+.reading-viewport {
+  width: 100%;
+}
+
+.reading-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 12px 14px;
+  box-shadow: 0 2px 8px rgba(25, 22, 18, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.reading-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.reading-rasi-lead {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.reading-glyph {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: var(--bg-subtle);
+  font-size: 1.35rem;
+  flex-shrink: 0;
+}
+
+.title-with-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.active-rasi-name {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.active-rasi-sub {
+  margin: 1px 0 0;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.badge-chandrashtama {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--accent-caution);
+  background: var(--accent-caution-soft);
+  border: 1px solid #f6cfc7;
+  padding: 2px 6px;
+  border-radius: 999px;
+}
+
+.pill-60s {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  background: var(--bg-subtle);
+  padding: 3px 8px;
+  border-radius: 999px;
+  flex-shrink: 0;
+}
+
+/* 3-Section Scannable Flow */
+.reading-sections-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.palan-card {
+  position: relative;
+  padding: 10px 12px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-light);
+}
+
+.palan-card--focus {
+  background: var(--bg-focus);
+  border-color: #eed9bd;
+}
+
+.palan-card--caution {
+  background: var(--bg-caution);
+  border-color: #efd4cf;
+}
+
+.palan-card--habit {
+  background: var(--bg-habit);
+  border-color: #cde3d7;
+}
+
+.palan-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  margin-bottom: 5px;
+}
+
+.palan-title {
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.palan-title--focus { color: var(--accent-saffron); }
+.palan-title--caution { color: var(--accent-caution); }
+.palan-title--habit { color: var(--accent-emerald); }
+
+.tag-free {
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 999px;
+  background: var(--accent-saffron-soft);
+  color: var(--accent-saffron);
+}
+
+.tag-locked {
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 999px;
+  background: rgba(25, 22, 18, 0.08);
+  color: var(--text-secondary);
+}
+
+.tag-unlocked {
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 999px;
+  background: var(--accent-emerald-soft);
+  color: var(--accent-emerald);
+}
+
+.palan-text {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.48;
+  color: var(--text-primary);
+}
+
+/* Locked blur & shim */
+.palan-card--locked .palan-text {
+  filter: blur(4px);
+  user-select: none;
+  opacity: 0.45;
+}
+
+.lock-shim {
+  margin-top: 6px;
+  padding: 6px 8px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px dashed var(--border-strong);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  line-height: 1.3;
+}
+
+/* Unlock CTA Box (Inside Card) */
+.unlock-cta-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, #fffdf8 0%, #faeee4 100%);
+  border: 1px solid #ecc9b0;
+  margin-top: 2px;
+}
+
+.unlock-cta-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.unlock-cta-text strong {
+  font-size: 0.85rem;
+  color: var(--text-primary);
+  line-height: 1.25;
+}
+
+.unlock-cta-text span {
+  font-size: 0.72rem;
+  color: var(--text-secondary);
+  margin-top: 1px;
+}
+
+.btn-gpay-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 40px;
+  padding: 0 14px;
+  border-radius: 999px;
+  background: var(--accent-emerald);
+  color: #ffffff;
+  font-size: 0.82rem;
+  font-weight: 700;
+  flex-shrink: 0;
+  box-shadow: 0 2px 6px rgba(21, 102, 68, 0.25);
+  transition: transform 0.1s ease;
+}
+
+.btn-gpay-pill:active {
+  transform: scale(0.97);
+}
+
+.gpay-g {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #ffffff;
+  color: var(--accent-emerald);
+  font-size: 0.72rem;
+  font-weight: 900;
+}
+
+/* Unlocked status confirmation */
+.unlocked-status-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: var(--radius-md);
+  background: var(--accent-emerald-soft);
+  border: 1px solid #b3d9c7;
+  font-size: 0.78rem;
+  color: var(--accent-emerald);
+  font-weight: 600;
+}
+
+.btn-reset-preview {
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 0.72rem;
+  text-decoration: underline;
+  padding: 2px 6px;
+}
+
+/* ==========================================================================
+   Modals (Location & GPay)
+   ========================================================================== */
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  background: rgba(25, 22, 18, 0.6);
+  backdrop-filter: blur(2px);
+  padding: 10px;
+}
+
+.modal-card {
+  width: 100%;
+  max-width: 440px;
+  background: var(--bg-surface);
+  border-radius: var(--radius-lg);
+  padding: 18px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.modal-eyebrow {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--accent-emerald);
+}
+
+.modal-title {
+  margin: 2px 0 0;
+  font-size: 1.15rem;
+  font-weight: 800;
+}
+
+.btn-close {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: var(--bg-subtle);
+  color: var(--text-primary);
+  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-gps-action {
+  width: 100%;
+  padding: 10px;
+  border-radius: var(--radius-md);
+  background: var(--accent-saffron-soft);
+  color: var(--accent-saffron);
+  border: 1px solid #f6cfc7;
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.loc-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px;
+  max-height: 280px;
+  overflow-y: auto;
+}
+
+.city-btn {
+  padding: 8px 10px;
+  text-align: left;
+  border-radius: var(--radius-sm);
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-light);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.city-btn.is-active {
+  background: var(--accent-saffron-soft);
+  border-color: var(--accent-saffron);
+  color: var(--accent-saffron);
+}
+
+.receipt-box {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px;
+  background: var(--bg-subtle);
+  border-radius: var(--radius-md);
+  margin-bottom: 12px;
+}
+
+.receipt-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+}
+
+.receipt-row strong {
+  color: var(--text-primary);
+}
+
+.receipt-row--total {
+  border-top: 1px solid var(--border-strong);
+  padding-top: 8px;
+  font-size: 0.92rem;
+}
+
+.modal-note {
+  margin: 0 0 14px;
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+}
+
+.modal-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.btn-gpay-action {
+  width: 100%;
+  min-height: 46px;
+  border-radius: var(--radius-md);
+  background: var(--accent-emerald);
+  color: #ffffff;
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.btn-cancel-action {
+  width: 100%;
+  min-height: 40px;
+  border-radius: var(--radius-md);
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+}
+
+/* ==========================================================================
+   Desktop / Tablet Tweaks (>= 640px)
+   ========================================================================== */
+@media (min-width: 640px) {
+  .mobile-app-shell {
+    padding: 16px 20px 40px;
+    gap: 12px;
+  }
+
+  .modal-backdrop {
+    align-items: center;
+  }
+
+  .reading-sections-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+  }
+}

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>தினப்பலன் பாஸ் — Daily Palan Pass</title>
+  <meta name="description" content="உங்கள் ராசிக்கான இன்றைய 60-வினாடி தினப்பலன் மற்றும் உள்ளூர் இராகு காலம், திதி, நட்சத்திரம்." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="mobile-app-shell">
+
+    <!-- 1. Ultra-compact Header (Height ~46px) -->
+    <header class="app-topbar">
+      <div class="topbar-left">
+        <span class="topbar-brand-mark" aria-hidden="true">☀</span>
+        <div class="topbar-titles">
+          <h1 id="appTitle" class="topbar-title">தினப்பலன்</h1>
+          <span id="dateLocationSub" class="topbar-sub">24 நவ · சென்னை</span>
+        </div>
+      </div>
+
+      <div class="topbar-right">
+        <!-- Bilingual Switcher: Tamil (Default) / English -->
+        <div class="lang-toggle-wrap" role="group" aria-label="Language selection">
+          <button id="langTaBtn" type="button" class="lang-btn is-active" aria-pressed="true">தமிழ்</button>
+          <button id="langEnBtn" type="button" class="lang-btn" aria-pressed="false">EN</button>
+        </div>
+
+        <!-- Location Picker Button -->
+        <button id="openLocModalBtn" type="button" class="loc-pill-btn" aria-label="Change location">
+          <span class="loc-pin">📍</span>
+          <span id="locBtnLabel" class="loc-name">சென்னை</span>
+        </button>
+
+        <!-- Pass Status Badge -->
+        <span id="passStatusBadge" class="status-badge status-badge--preview">இலவசம்</span>
+      </div>
+    </header>
+
+    <!-- 2. Compact Panchang Strip (Tithi, Nakshatra, Rahu Kaal, Sunrise) -->
+    <section class="panchang-strip" aria-label="Daily panchang timings">
+      <div class="panchang-strip__track">
+        <div class="panchang-chip panchang-chip--rahu">
+          <span class="chip-label" id="rahuLabel">இராகு</span>
+          <span id="rahuVal" class="chip-val">—</span>
+        </div>
+        <div class="panchang-chip">
+          <span class="chip-label" id="tithiLabel">திதி</span>
+          <span id="tithiVal" class="chip-val">—</span>
+        </div>
+        <div class="panchang-chip">
+          <span class="chip-label" id="nakshatraLabel">நட்சத்திரம்</span>
+          <span id="nakshatraVal" class="chip-val">—</span>
+        </div>
+        <div class="panchang-chip">
+          <span class="chip-label" id="sunLabel">சூரியன்</span>
+          <span id="sunVal" class="chip-val">—</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Sleek Horizontal 12-Rasi Carousel (Height ~44px, Zero Vertical Waste) -->
+    <nav class="rasi-carousel-nav" aria-label="ராசி தேர்வு">
+      <div id="rasiCarousel" class="rasi-carousel-track" role="tablist">
+        <!-- Populated dynamically: ♈ மேஷம், ♉ ரிஷபம் ... -->
+      </div>
+    </nav>
+
+    <!-- 4. The 60-Second Reading Card — Visible IMMEDIATELY in the first view! -->
+    <main class="reading-viewport">
+      <article id="readingCard" class="reading-card" role="tabpanel">
+        
+        <!-- Card Top Bar: Active Rasi & Badge -->
+        <div class="reading-card__header">
+          <div class="reading-rasi-lead">
+            <span id="activeGlyph" class="reading-glyph">♈</span>
+            <div>
+              <div class="title-with-badge">
+                <h2 id="activeRasiName" class="active-rasi-name">மேஷம்</h2>
+                <span id="chandrashtamaBadge" class="badge-chandrashtama" hidden>⚠️ சந்திராஷ்டமம்</span>
+              </div>
+              <p id="readingSub" class="active-rasi-sub">60-வினாடி தினப்பலன்</p>
+            </div>
+          </div>
+          <span class="pill-60s">~60s</span>
+        </div>
+
+        <!-- 3-Part Scannable Reading Flow -->
+        <div class="reading-sections-grid">
+          
+          <!-- 1. FOCUS (கவனம்) — Always visible above the fold in free preview -->
+          <div class="palan-card palan-card--focus">
+            <div class="palan-card__header">
+              <span class="palan-title palan-title--focus" id="focusHeading">1 · கவனம் (Focus)</span>
+              <span class="tag-free" id="focusTag">இலவசம்</span>
+            </div>
+            <p id="focusText" class="palan-text"></p>
+          </div>
+
+          <!-- 2. CAUTION (எச்சரிக்கை) — Gated preview -->
+          <div id="cautionCard" class="palan-card palan-card--caution palan-card--locked">
+            <div class="palan-card__header">
+              <span class="palan-title palan-title--caution" id="cautionHeading">2 · எச்சரிக்கை (Caution)</span>
+              <span id="cautionLockTag" class="tag-locked">🔒 ₹10 பாஸ்</span>
+            </div>
+            <p id="cautionText" class="palan-text"></p>
+            <div id="cautionOverlay" class="lock-shim">
+              <span id="cautionOverlayText">இன்றைய எச்சரிக்கை &amp; நேரக் குறிப்பை அறிய ₹10 பாஸ் பெறவும்</span>
+            </div>
+          </div>
+
+          <!-- 3. HABIT CUE (பழக்க வழக்கம்) — Gated preview -->
+          <div id="habitCard" class="palan-card palan-card--habit palan-card--locked">
+            <div class="palan-card__header">
+              <span class="palan-title palan-title--habit" id="habitHeading">3 · பழக்க வழக்கம் (Habit Cue)</span>
+              <span id="habitLockTag" class="tag-locked">🔒 ₹10 பாஸ்</span>
+            </div>
+            <p id="habitText" class="palan-text"></p>
+            <div id="habitOverlay" class="lock-shim">
+              <span id="habitOverlayText">இன்றைய கோசாரத்திற்குரிய 2-நிமிட பழக்கக் குறிப்பு</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- ₹10 Unlock Banner (Inside card or bottom) -->
+        <div id="unlockCtaBox" class="unlock-cta-box">
+          <div class="unlock-cta-text">
+            <strong id="unlockCtaTitle">முழு பலனையும் அன்லாக் செய்ய — ₹10</strong>
+            <span id="unlockCtaDesc">எச்சரிக்கை &amp; பழக்க வழக்கம் (12 ராசிகளுக்கும்)</span>
+          </div>
+          <button id="openGpayModalBtn" type="button" class="btn-gpay-pill">
+            <span class="gpay-g">G</span>
+            <span id="gpayBtnText">₹10 பாஸ்</span>
+          </button>
+        </div>
+
+        <!-- Unlocked confirmation status -->
+        <div id="unlockedStatusBox" class="unlocked-status-box" hidden>
+          <span class="check-icon">✓</span>
+          <span id="unlockedMsg">இன்றைய ₹10 பாஸ் ஆக்டிவ் (அனைத்து ராசிகளும் திறக்கப்பட்டுள்ளன)</span>
+          <button id="resetPassBtn" type="button" class="btn-reset-preview">முன்னோட்டம்</button>
+        </div>
+
+      </article>
+    </main>
+
+  </div>
+
+  <!-- Location Picker Modal / Sheet -->
+  <div id="locModalBackdrop" class="modal-backdrop" hidden role="dialog" aria-modal="true" aria-labelledby="locModalTitle">
+    <div class="modal-card modal-card--loc">
+      <div class="modal-header">
+        <h3 id="locModalTitle" class="modal-title">இடத்தை தேர்வு செய்யவும்</h3>
+        <button id="closeLocModalBtn" type="button" class="btn-close" aria-label="Close">✕</button>
+      </div>
+      <div class="modal-body">
+        <button id="gpsLocateBtn" type="button" class="btn-gps-action">
+          <span>📍 தற்போதைய இடத்தை கண்டறி (GPS)</span>
+        </button>
+        <div class="loc-grid" id="cityListGrid">
+          <!-- Populated by app.js: Chennai, Coimbatore, Madurai, etc. -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Simulated GPay Modal -->
+  <div id="gpayModalBackdrop" class="modal-backdrop" hidden role="dialog" aria-modal="true" aria-labelledby="gpayTitle">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div>
+          <span class="modal-eyebrow" id="modalEyebrow">Google Pay (UPI)</span>
+          <h3 id="gpayTitle" class="modal-title">₹10 தினப்பலன் பாஸ்</h3>
+        </div>
+        <button id="closeGpayModalBtn" type="button" class="btn-close" aria-label="Close">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="receipt-box">
+          <div class="receipt-row">
+            <span id="receiptDateLabel">தேதி</span>
+            <strong id="receiptDateVal">—</strong>
+          </div>
+          <div class="receipt-row">
+            <span id="receiptCoverageLabel">அணுகல்</span>
+            <strong id="receiptCoverageVal">12 ராசிகள் · முழு பலன்</strong>
+          </div>
+          <div class="receipt-row receipt-row--total">
+            <span id="receiptTotalLabel">மொத்தம்</span>
+            <strong>₹10.00</strong>
+          </div>
+        </div>
+        <p class="modal-note" id="prototypeNote">
+          மாதிரி கட்டணம்: "உறுதி செய்" பொத்தானை அழுத்தினால் ₹10 பாஸ் உடனே ஆக்டிவ் ஆகும்.
+        </p>
+      </div>
+      <div class="modal-actions">
+        <button id="confirmGpayBtn" type="button" class="btn-gpay-action">
+          <span id="confirmGpayText">GPay மூலம் ₹10 செலுத்தவும்</span>
+        </button>
+        <button id="cancelGpayBtn" type="button" class="btn-cancel-action">
+          <span id="cancelGpayText">ரத்து செய்</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
