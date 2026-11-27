@@ -830,10 +830,10 @@ async function init() {
     state.isUnlocked = localStorage.getItem(STORAGE_KEYS.pass) === dayKey;
   } catch {}
 
-  // If running via http server, optionally check for newer feed
+  // If running via http/https server, fetch today's latest automated feed
   if (window.location.protocol.startsWith("http")) {
     try {
-      const res = await fetch("data/today.json");
+      const res = await fetch(`data/today.json?v=${Date.now()}`, { cache: "no-store" });
       if (res.ok) {
         const fetched = await res.json();
         if (fetched && fetched.rasis) state.data = fetched;

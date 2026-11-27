@@ -1,18 +1,18 @@
 {
-  "generatedAt": "2026-11-24T17:23:59.746Z",
-  "istDate": "2026-11-24",
+  "generatedAt": "2026-11-27T11:23:34.395Z",
+  "istDate": "2026-11-27",
   "panchang": {
     "tithi": {
-      "ta": "சுக்ல பட்ச பௌர்ணமி",
-      "en": "Shukla Paksha Purnima"
+      "ta": "கிருஷ்ண பட்ச திருதியை",
+      "en": "Krishna Paksha Tritiya"
     },
     "nakshatra": {
-      "ta": "கார்த்திகை",
-      "en": "Krittika"
+      "ta": "திருவாதிரை",
+      "en": "Ardra"
     },
     "moonSign": {
-      "ta": "ரிஷபம்",
-      "en": "Taurus"
+      "ta": "மிதுனம்",
+      "en": "Gemini"
     }
   },
   "rasis": [
@@ -21,6 +21,24 @@
       "tamilName": "மேஷம்",
       "englishName": "Aries",
       "glyph": "♈",
+      "housePosition": 3,
+      "isChandrashtama": false,
+      "ta": {
+        "focus": "தகவல் தொடர்பு மற்றும் சிறு முயற்சிகள் சிறப்பான பலன் தரும். நிலுவையில் இருந்த முக்கியமான செய்தி அல்லது மின்னஞ்சல் மூலம் சாதகமான திருப்பம் உண்டாகும்.",
+        "caution": "ஒரே நேரத்தில் பல காரியங்களில் கவனத்தை சிதறவிடாமல் ஒரு பணியை முழுமையாக முடிக்கவும்.",
+        "habitCue": "அனைத்து பதில்களையும் ஒரே 20 நிமிட நேர இடைவெளியில் அனுப்பி முடித்து கவனச்சிதறலைத் தவிருங்கள்."
+      },
+      "en": {
+        "focus": "Communication channels open smoothly. A crisp call or concise message unblocks a pending task.",
+        "caution": "Do not scatter attention across too many errands at once.",
+        "habitCue": "Group all outgoing messages into a single 20-minute focus window."
+      }
+    },
+    {
+      "id": "rishabam",
+      "tamilName": "ரிஷபம்",
+      "englishName": "Taurus",
+      "glyph": "♉",
       "housePosition": 2,
       "isChandrashtama": false,
       "ta": {
@@ -35,28 +53,28 @@
       }
     },
     {
-      "id": "rishabam",
-      "tamilName": "ரிஷபம்",
-      "englishName": "Taurus",
-      "glyph": "♉",
+      "id": "mithunam",
+      "tamilName": "மிதுனம்",
+      "englishName": "Gemini",
+      "glyph": "♊",
       "housePosition": 1,
       "isChandrashtama": false,
       "ta": {
-        "focus": "சந்திரன் உங்கள் ஜென்ம ராசியில் கார்த்திகை நட்சத்திரத்தில் சஞ்சரிப்பதால் புத்துணர்ச்சியும் ஆற்றலும் கூடும். காலையில் ஒரு முக்கியமான முடிவை எடுத்து முடிப்பது நல்ல தொடக்கமாக அமையும்.",
+        "focus": "சந்திரன் உங்கள் ஜென்ம ராசியில் திருவாதிரை நட்சத்திரத்தில் சஞ்சரிப்பதால் புத்துணர்ச்சியும் ஆற்றலும் கூடும். காலையில் ஒரு முக்கியமான முடிவை எடுத்து முடிப்பது நல்ல தொடக்கமாக அமையும்.",
         "caution": "மதிய வேளையில் அவசரப்பட்டு வாக்குவாதங்களில் ஈடுபட வேண்டாம். வார்த்தைகளில் நிதானம் அவசியம்.",
         "habitCue": "காலை பணியைத் தொடங்கும் முன் 3 முறை ஆழ்ந்த மூச்சுப் பயிற்சி செய்து மனதை அமைதிப்படுத்துங்கள்."
       },
       "en": {
-        "focus": "With the Moon transiting your Janma Rasi under Krittika, mental clarity and vitality are high. Tackle your top priority before noon.",
+        "focus": "With the Moon transiting your Janma Rasi under Ardra, mental clarity and vitality are high. Tackle your top priority before noon.",
         "caution": "Avoid hasty reactions or sharp remarks in afternoon meetings.",
         "habitCue": "Take 3 slow deep breaths before opening work messages."
       }
     },
     {
-      "id": "mithunam",
-      "tamilName": "மிதுனம்",
-      "englishName": "Gemini",
-      "glyph": "♊",
+      "id": "kadagam",
+      "tamilName": "கடகம்",
+      "englishName": "Cancer",
+      "glyph": "♋",
       "housePosition": 12,
       "isChandrashtama": false,
       "ta": {
@@ -71,10 +89,10 @@
       }
     },
     {
-      "id": "kadagam",
-      "tamilName": "கடகம்",
-      "englishName": "Cancer",
-      "glyph": "♋",
+      "id": "simmam",
+      "tamilName": "சிம்மம்",
+      "englishName": "Leo",
+      "glyph": "♌",
       "housePosition": 11,
       "isChandrashtama": false,
       "ta": {
@@ -89,10 +107,10 @@
       }
     },
     {
-      "id": "simmam",
-      "tamilName": "சிம்மம்",
-      "englishName": "Leo",
-      "glyph": "♌",
+      "id": "kanni",
+      "tamilName": "கன்னி",
+      "englishName": "Virgo",
+      "glyph": "♍",
       "housePosition": 10,
       "isChandrashtama": false,
       "ta": {
@@ -107,10 +125,10 @@
       }
     },
     {
-      "id": "kanni",
-      "tamilName": "கன்னி",
-      "englishName": "Virgo",
-      "glyph": "♍",
+      "id": "thulam",
+      "tamilName": "துலாம்",
+      "englishName": "Libra",
+      "glyph": "♎",
       "housePosition": 9,
       "isChandrashtama": false,
       "ta": {
@@ -125,10 +143,10 @@
       }
     },
     {
-      "id": "thulam",
-      "tamilName": "துலாம்",
-      "englishName": "Libra",
-      "glyph": "♎",
+      "id": "viruchigam",
+      "tamilName": "விருச்சிகம்",
+      "englishName": "Scorpio",
+      "glyph": "♏",
       "housePosition": 8,
       "isChandrashtama": true,
       "ta": {
@@ -143,10 +161,10 @@
       }
     },
     {
-      "id": "viruchigam",
-      "tamilName": "விருச்சிகம்",
-      "englishName": "Scorpio",
-      "glyph": "♏",
+      "id": "dhanusu",
+      "tamilName": "தனுசு",
+      "englishName": "Sagittarius",
+      "glyph": "♐",
       "housePosition": 7,
       "isChandrashtama": false,
       "ta": {
@@ -161,10 +179,10 @@
       }
     },
     {
-      "id": "dhanusu",
-      "tamilName": "தனுசு",
-      "englishName": "Sagittarius",
-      "glyph": "♐",
+      "id": "makaram",
+      "tamilName": "மகரம்",
+      "englishName": "Capricorn",
+      "glyph": "♑",
       "housePosition": 6,
       "isChandrashtama": false,
       "ta": {
@@ -179,10 +197,10 @@
       }
     },
     {
-      "id": "makaram",
-      "tamilName": "மகரம்",
-      "englishName": "Capricorn",
-      "glyph": "♑",
+      "id": "kumbam",
+      "tamilName": "கும்பம்",
+      "englishName": "Aquarius",
+      "glyph": "♒",
       "housePosition": 5,
       "isChandrashtama": false,
       "ta": {
@@ -197,10 +215,10 @@
       }
     },
     {
-      "id": "kumbam",
-      "tamilName": "கும்பம்",
-      "englishName": "Aquarius",
-      "glyph": "♒",
+      "id": "meenam",
+      "tamilName": "மீனம்",
+      "englishName": "Pisces",
+      "glyph": "♓",
       "housePosition": 4,
       "isChandrashtama": false,
       "ta": {
@@ -212,24 +230,6 @@
         "focus": "Domestic calm and personal grounding take priority. A tidy workspace enhances focus remarkably.",
         "caution": "Avoid carrying lingering work stress into your evening personal hours.",
         "habitCue": "Spend 5 quiet screen-free minutes resetting your pace after work."
-      }
-    },
-    {
-      "id": "meenam",
-      "tamilName": "மீனம்",
-      "englishName": "Pisces",
-      "glyph": "♓",
-      "housePosition": 3,
-      "isChandrashtama": false,
-      "ta": {
-        "focus": "தகவல் தொடர்பு மற்றும் சிறு முயற்சிகள் சிறப்பான பலன் தரும். நிலுவையில் இருந்த முக்கியமான செய்தி அல்லது மின்னஞ்சல் மூலம் சாதகமான திருப்பம் உண்டாகும்.",
-        "caution": "ஒரே நேரத்தில் பல காரியங்களில் கவனத்தை சிதறவிடாமல் ஒரு பணியை முழுமையாக முடிக்கவும்.",
-        "habitCue": "அனைத்து பதில்களையும் ஒரே 20 நிமிட நேர இடைவெளியில் அனுப்பி முடித்து கவனச்சிதறலைத் தவிருங்கள்."
-      },
-      "en": {
-        "focus": "Communication channels open smoothly. A crisp call or concise message unblocks a pending task.",
-        "caution": "Do not scatter attention across too many errands at once.",
-        "habitCue": "Group all outgoing messages into a single 20-minute focus window."
       }
     }
   ]

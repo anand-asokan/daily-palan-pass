@@ -1,0 +1,38 @@
+name: Auto-Generate Daily Palan
+
+on:
+  schedule:
+    # Runs at 18:31 UTC daily (which is 00:01 AM IST midnight in India)
+    - cron: '31 18 * * *'
+  workflow_dispatch: # Allows manual trigger from GitHub Actions tab
+
+permissions:
+  contents: write
+
+jobs:
+  generate-daily:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Generate Today's Palan & Panchang Data
+        run: |
+          node scripts/generate-daily.js
+
+      - name: Commit and Push Updated Data
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/
+          if git diff --staged --quiet; then
+            echo "No data changes to commit."
+          else
+            git commit -m "Auto-update daily palan for $(date -u +'%Y-%m-%d') [skip ci]"
+            git push
+          fi
