@@ -1,18 +1,18 @@
 {
-  "generatedAt": "2026-11-27T11:23:34.395Z",
-  "istDate": "2026-11-27",
+  "generatedAt": "2026-11-28T01:35:41.837Z",
+  "istDate": "2026-11-28",
   "panchang": {
     "tithi": {
-      "ta": "கிருஷ்ண பட்ச திருதியை",
-      "en": "Krishna Paksha Tritiya"
+      "ta": "கிருஷ்ண பட்ச பஞ்சமி",
+      "en": "Krishna Paksha Panchami"
     },
     "nakshatra": {
-      "ta": "திருவாதிரை",
-      "en": "Ardra"
+      "ta": "புனர்பூசம்",
+      "en": "Punarvasu"
     },
     "moonSign": {
-      "ta": "மிதுனம்",
-      "en": "Gemini"
+      "ta": "கடகம்",
+      "en": "Cancer"
     }
   },
   "rasis": [
@@ -21,6 +21,24 @@
       "tamilName": "மேஷம்",
       "englishName": "Aries",
       "glyph": "♈",
+      "housePosition": 4,
+      "isChandrashtama": false,
+      "ta": {
+        "focus": "வீடு மற்றும் உடலமைதிக்கு முக்கியத்துவம் தரவேண்டிய நாள். வேலை செய்யும் சூழலைச் சுத்தமாக வைப்பது மன அமைதியையும் வேலைத்திறனையும் கூட்டும்.",
+        "caution": "பணிச்சுமையை மாலையில் வீட்டிற்கு எடுத்துச் செல்லாமல், குடும்பத்துடன் அமைதியான நேரம் செலவிடுங்கள்.",
+        "habitCue": "வேலை முடிந்ததும் 5 நிமிடங்கள் அமைதியாக அமர்ந்து மனதை அன்றாட அழுத்தத்திலிருந்து விடுவிக்கவும்."
+      },
+      "en": {
+        "focus": "Domestic calm and personal grounding take priority. A tidy workspace enhances focus remarkably.",
+        "caution": "Avoid carrying lingering work stress into your evening personal hours.",
+        "habitCue": "Spend 5 quiet screen-free minutes resetting your pace after work."
+      }
+    },
+    {
+      "id": "rishabam",
+      "tamilName": "ரிஷபம்",
+      "englishName": "Taurus",
+      "glyph": "♉",
       "housePosition": 3,
       "isChandrashtama": false,
       "ta": {
@@ -35,10 +53,10 @@
       }
     },
     {
-      "id": "rishabam",
-      "tamilName": "ரிஷபம்",
-      "englishName": "Taurus",
-      "glyph": "♉",
+      "id": "mithunam",
+      "tamilName": "மிதுனம்",
+      "englishName": "Gemini",
+      "glyph": "♊",
       "housePosition": 2,
       "isChandrashtama": false,
       "ta": {
@@ -53,28 +71,28 @@
       }
     },
     {
-      "id": "mithunam",
-      "tamilName": "மிதுனம்",
-      "englishName": "Gemini",
-      "glyph": "♊",
+      "id": "kadagam",
+      "tamilName": "கடகம்",
+      "englishName": "Cancer",
+      "glyph": "♋",
       "housePosition": 1,
       "isChandrashtama": false,
       "ta": {
-        "focus": "சந்திரன் உங்கள் ஜென்ம ராசியில் திருவாதிரை நட்சத்திரத்தில் சஞ்சரிப்பதால் புத்துணர்ச்சியும் ஆற்றலும் கூடும். காலையில் ஒரு முக்கியமான முடிவை எடுத்து முடிப்பது நல்ல தொடக்கமாக அமையும்.",
+        "focus": "சந்திரன் உங்கள் ஜென்ம ராசியில் புனர்பூசம் நட்சத்திரத்தில் சஞ்சரிப்பதால் புத்துணர்ச்சியும் ஆற்றலும் கூடும். காலையில் ஒரு முக்கியமான முடிவை எடுத்து முடிப்பது நல்ல தொடக்கமாக அமையும்.",
         "caution": "மதிய வேளையில் அவசரப்பட்டு வாக்குவாதங்களில் ஈடுபட வேண்டாம். வார்த்தைகளில் நிதானம் அவசியம்.",
         "habitCue": "காலை பணியைத் தொடங்கும் முன் 3 முறை ஆழ்ந்த மூச்சுப் பயிற்சி செய்து மனதை அமைதிப்படுத்துங்கள்."
       },
       "en": {
-        "focus": "With the Moon transiting your Janma Rasi under Ardra, mental clarity and vitality are high. Tackle your top priority before noon.",
+        "focus": "With the Moon transiting your Janma Rasi under Punarvasu, mental clarity and vitality are high. Tackle your top priority before noon.",
         "caution": "Avoid hasty reactions or sharp remarks in afternoon meetings.",
         "habitCue": "Take 3 slow deep breaths before opening work messages."
       }
     },
     {
-      "id": "kadagam",
-      "tamilName": "கடகம்",
-      "englishName": "Cancer",
-      "glyph": "♋",
+      "id": "simmam",
+      "tamilName": "சிம்மம்",
+      "englishName": "Leo",
+      "glyph": "♌",
       "housePosition": 12,
       "isChandrashtama": false,
       "ta": {
@@ -89,10 +107,10 @@
       }
     },
     {
-      "id": "simmam",
-      "tamilName": "சிம்மம்",
-      "englishName": "Leo",
-      "glyph": "♌",
+      "id": "kanni",
+      "tamilName": "கன்னி",
+      "englishName": "Virgo",
+      "glyph": "♍",
       "housePosition": 11,
       "isChandrashtama": false,
       "ta": {
@@ -107,10 +125,10 @@
       }
     },
     {
-      "id": "kanni",
-      "tamilName": "கன்னி",
-      "englishName": "Virgo",
-      "glyph": "♍",
+      "id": "thulam",
+      "tamilName": "துலாம்",
+      "englishName": "Libra",
+      "glyph": "♎",
       "housePosition": 10,
       "isChandrashtama": false,
       "ta": {
@@ -125,10 +143,10 @@
       }
     },
     {
-      "id": "thulam",
-      "tamilName": "துலாம்",
-      "englishName": "Libra",
-      "glyph": "♎",
+      "id": "viruchigam",
+      "tamilName": "விருச்சிகம்",
+      "englishName": "Scorpio",
+      "glyph": "♏",
       "housePosition": 9,
       "isChandrashtama": false,
       "ta": {
@@ -143,10 +161,10 @@
       }
     },
     {
-      "id": "viruchigam",
-      "tamilName": "விருச்சிகம்",
-      "englishName": "Scorpio",
-      "glyph": "♏",
+      "id": "dhanusu",
+      "tamilName": "தனுசு",
+      "englishName": "Sagittarius",
+      "glyph": "♐",
       "housePosition": 8,
       "isChandrashtama": true,
       "ta": {
@@ -161,10 +179,10 @@
       }
     },
     {
-      "id": "dhanusu",
-      "tamilName": "தனுசு",
-      "englishName": "Sagittarius",
-      "glyph": "♐",
+      "id": "makaram",
+      "tamilName": "மகரம்",
+      "englishName": "Capricorn",
+      "glyph": "♑",
       "housePosition": 7,
       "isChandrashtama": false,
       "ta": {
@@ -179,10 +197,10 @@
       }
     },
     {
-      "id": "makaram",
-      "tamilName": "மகரம்",
-      "englishName": "Capricorn",
-      "glyph": "♑",
+      "id": "kumbam",
+      "tamilName": "கும்பம்",
+      "englishName": "Aquarius",
+      "glyph": "♒",
       "housePosition": 6,
       "isChandrashtama": false,
       "ta": {
@@ -197,10 +215,10 @@
       }
     },
     {
-      "id": "kumbam",
-      "tamilName": "கும்பம்",
-      "englishName": "Aquarius",
-      "glyph": "♒",
+      "id": "meenam",
+      "tamilName": "மீனம்",
+      "englishName": "Pisces",
+      "glyph": "♓",
       "housePosition": 5,
       "isChandrashtama": false,
       "ta": {
@@ -212,24 +230,6 @@
         "focus": "Creative agility and problem-solving are heightened. Great for drafting plans and unblocking roadblocks.",
         "caution": "Avoid speculative moves based purely on assumptions; verify with facts.",
         "habitCue": "Write down one creative insight or lesson before evening."
-      }
-    },
-    {
-      "id": "meenam",
-      "tamilName": "மீனம்",
-      "englishName": "Pisces",
-      "glyph": "♓",
-      "housePosition": 4,
-      "isChandrashtama": false,
-      "ta": {
-        "focus": "வீடு மற்றும் உடலமைதிக்கு முக்கியத்துவம் தரவேண்டிய நாள். வேலை செய்யும் சூழலைச் சுத்தமாக வைப்பது மன அமைதியையும் வேலைத்திறனையும் கூட்டும்.",
-        "caution": "பணிச்சுமையை மாலையில் வீட்டிற்கு எடுத்துச் செல்லாமல், குடும்பத்துடன் அமைதியான நேரம் செலவிடுங்கள்.",
-        "habitCue": "வேலை முடிந்ததும் 5 நிமிடங்கள் அமைதியாக அமர்ந்து மனதை அன்றாட அழுத்தத்திலிருந்து விடுவிக்கவும்."
-      },
-      "en": {
-        "focus": "Domestic calm and personal grounding take priority. A tidy workspace enhances focus remarkably.",
-        "caution": "Avoid carrying lingering work stress into your evening personal hours.",
-        "habitCue": "Spend 5 quiet screen-free minutes resetting your pace after work."
       }
     }
   ]
